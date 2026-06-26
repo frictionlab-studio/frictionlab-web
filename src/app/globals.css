@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FrictionLab Design Tokens (Tailwind v4 — CSS-first theme)
+   Direction: premium futuristic AI venture studio.
+   Dark luxury · black/navy base · gold accent · neon glow · glass.
+   Everything declared in @theme becomes a Tailwind utility,
+   e.g. --color-gold-500  ->  bg-gold-500 / text-gold-500.
+   ============================================================ */
+
+@theme {
+  /* ---- Brand: deep ink / navy backgrounds ---- */
+  --color-ink-950: #03050b; /* near-black page base */
+  --color-ink-900: #060a16; /* primary background (black/navy) */
+  --color-ink-800: #0a1124; /* elevated navy surface */
+  --color-ink-700: #101a36; /* raised panel / hover */
+  --color-ink-600: #18254b; /* borders on dark */
+
+  /* ---- Brand: FrictionLab gold accent ---- */
+  --color-gold-300: #f7e4ad;
+  --color-gold-400: #eccd84;
+  --color-gold-500: #d4af37; /* primary gold */
+  --color-gold-600: #b8902a;
+
+  /* ---- Neon blue glow ---- */
+  --color-neon-blue: #38bdf8;
+  --color-neon-blue-strong: #2563eb;
+
+  /* ---- Neon purple glow ---- */
+  --color-neon-purple: #a855f7;
+  --color-neon-purple-strong: #7c3aed;
+
+  /* ---- Text ---- */
+  --color-foreground: #eef2fb; /* primary text */
+  --color-muted: #9aa6c2; /* secondary text */
+  --color-faint: #59668a; /* faint text / captions */
+
+  /* ---- Semantic background alias (used by <body>) ---- */
+  --color-background: var(--color-ink-900);
+
+  /* ---- Fonts ---- */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-space-grotesk), var(--font-geist-sans), sans-serif;
+
+  /* ---- Display type scale (used via text-display) ---- */
+  --text-display: 4.5rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+
+  /* ---- Radii ---- */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+
+  /* ---- Neon glow shadows  ->  shadow-glow-* utilities ---- */
+  --shadow-glow-blue: 0 0 0 1px rgba(56, 189, 248, 0.15),
+    0 0 40px -8px rgba(56, 189, 248, 0.55);
+  --shadow-glow-purple: 0 0 0 1px rgba(168, 85, 247, 0.15),
+    0 0 40px -8px rgba(168, 85, 247, 0.55);
+  --shadow-glow-gold: 0 0 0 1px rgba(212, 175, 55, 0.2),
+    0 0 36px -10px rgba(212, 175, 55, 0.55);
+
+  /* ---- Glass surface shadow (soft depth + inner highlight) ---- */
+  --shadow-glass: 0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+    0 8px 40px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================
+   Base layer
+   ============================================================ */
+@layer base {
+  html {
+    /* Smooth in-page anchor scrolling for navbar links. */
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    /* Ambient radial brand glows behind the page (3D-ready depth). */
+    background-image:
+      radial-gradient(
+        60rem 60rem at 15% -10%,
+        rgba(37, 99, 235, 0.18),
+        transparent 60%
+      ),
+      radial-gradient(
+        50rem 50rem at 100% 0%,
+        rgba(124, 58, 237, 0.16),
+        transparent 55%
+      ),
+      radial-gradient(
+        40rem 40rem at 50% 120%,
+        rgba(212, 175, 55, 0.08),
+        transparent 60%
+      );
+    background-attachment: fixed;
+  }
+
+  /* Headings default to the futuristic display font. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ============================================================
+   Reusable utilities / component primitives
+   ============================================================ */
+@layer components {
+  /* Frosted glass surface — translucent navy + blur + hairline border. */
+  .glass {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.02)
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Gold gradient text for premium headlines / the brand mark. */
+  .text-gradient-gold {
+    background: linear-gradient(
+      90deg,
+      var(--color-gold-300),
+      var(--color-gold-500)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Neon blue->purple gradient text for accent words. */
+  .text-gradient-neon {
+    background: linear-gradient(
+      90deg,
+      var(--color-neon-blue),
+      var(--color-neon-purple)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Subtle futuristic grid overlay (faded toward the edges). */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      #000 40%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      #000 40%,
+      transparent 100%
+    );
+  }
+}
+
+/* ============================================================
+   Cinematic animations (kept GPU-friendly: transform/opacity).
+   ============================================================ */
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate3d(-4%, -2%, 0) scale(1.05);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@layer utilities {
+  .animate-aurora {
+    animation: aurora-drift 18s ease-in-out infinite;
+  }
+  .animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+  .animate-float-slower {
+    animation: float-slow 11s ease-in-out infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 5s ease-in-out infinite;
+  }
+  .animate-spin-slow {
+    animation: spin-slow 26s linear infinite;
+  }
+  .animate-spin-slow-reverse {
+    animation: spin-slow-reverse 34s linear infinite;
+  }
+
+  /* Animated gold shimmer for premium headline words. */
+  .text-shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      var(--color-gold-500) 0%,
+      var(--color-gold-300) 25%,
+      #fffbe9 50%,
+      var(--color-gold-300) 75%,
+      var(--color-gold-500) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+}
+
+/* Respect users who prefer reduced motion: stop ambient animation. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

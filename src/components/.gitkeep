@@ -1,0 +1,2 @@
+# Reusable React components live here (buttons, cards, navbar, footer, etc.).
+# Suggested split later: components/ui (primitives) and components/sections (page blocks).
