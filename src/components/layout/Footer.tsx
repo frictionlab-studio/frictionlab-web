@@ -111,10 +111,10 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-6 flex flex-col gap-2 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; {year} {siteConfig.name}. All rights reserved.
+          <p className="flex items-center gap-2">
+            <img src="/logo.png" alt="FrictionLab" className="h-6 w-auto" />
+            {siteConfig.name} &copy; {year}. All rights reserved.
           </p>
-          <p>{siteConfig.tagline} · Built with AI, shipped with intent.</p>
         </div>
       </Container>
     </footer>

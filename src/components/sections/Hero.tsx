@@ -42,6 +42,14 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           {/* Copy */}
           <div className="text-center lg:text-left">
+            <div className="mb-6 flex items-center justify-center gap-3 lg:justify-start">
+              <img src="/logo.png" alt="FrictionLab" className="h-12 w-auto" />
+              <span className="font-display text-2xl font-bold tracking-tight">
+                <span className="text-gradient-gold">Friction</span>
+                <span className="text-foreground">Lab</span>
+              </span>
+            </div>
+
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-gold-500">
               AI Venture Studio · Bangladesh → Global
             </p>
