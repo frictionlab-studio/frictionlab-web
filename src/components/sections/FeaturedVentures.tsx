@@ -1,79 +1,73 @@
-// FeaturedVentures — spotlight cards for the flagship ventures, pulled from
-// the ventures data and tagged with their status and blog category.
+// FeaturedVentures — the Products section: cards for every live product with a
+// one-sentence description, price, a link to the product, and a pricing link.
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { getFeaturedVentures } from "@/data/ventures";
-import { getCategoryBySlug } from "@/data/blog-categories";
 
 export function FeaturedVentures() {
-  const featured = getFeaturedVentures();
+  const products = getFeaturedVentures();
 
   return (
-    <Section id="ventures">
+    <Section id="products">
       <SectionHeading
-        eyebrow="Featured Ventures"
+        eyebrow="Products"
         title={
           <>
-            The products leading the{" "}
-            <span className="text-gradient-neon">portfolio</span>
+            AI products you can{" "}
+            <span className="text-gradient-gold">use today</span>
           </>
         }
-        description="A look at the ventures currently in active development inside FrictionLab."
+        description="FrictionLab LLC builds and operates these products. Each has its own subscription and pricing."
       />
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-        {featured.map((venture) => {
-          const category = getCategoryBySlug(venture.categorySlug);
-          return (
-            <GlassCard
-              key={venture.slug}
-              glow={venture.accent}
-              padding="lg"
-              className="flex flex-col"
-            >
-              <div className="flex items-center justify-between gap-3">
-                <Badge accent={venture.accent}>
-                  {category?.name ?? "Venture"}
-                </Badge>
-                <Badge accent={venture.accent} dot>
-                  {venture.status}
-                </Badge>
-              </div>
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        {products.map((product) => (
+          <GlassCard
+            key={product.slug}
+            glow={product.accent}
+            padding="lg"
+            className="flex flex-col"
+          >
+            <h3 className="text-xl font-semibold text-foreground">
+              {product.name}
+            </h3>
+            <p className="mt-3 flex-1 text-sm leading-6 text-muted">
+              {product.description}
+            </p>
 
-              <h3 className="mt-6 text-xl font-semibold text-foreground">
-                {venture.name}
-              </h3>
-              <p className="mt-2 text-sm font-medium text-muted">
-                {venture.tagline}
-              </p>
-              <p className="mt-4 flex-1 text-sm leading-6 text-faint">
-                {venture.description}
-              </p>
+            <div className="mt-5 text-sm font-medium text-foreground">
+              {product.price}
+            </div>
 
-              <div className="mt-6">
-                {venture.href ? (
-                  <Button href={venture.href} size="sm" variant="glass">
-                    Learn more
-                  </Button>
-                ) : (
-                  <span className="text-xs font-medium uppercase tracking-widest text-faint">
-                    Coming soon
-                  </span>
-                )}
-              </div>
-            </GlassCard>
-          );
-        })}
+            <div className="mt-5 flex flex-wrap items-center gap-4">
+              <Button
+                href={product.liveUrl}
+                size="sm"
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit product
+              </Button>
+              <a
+                href={product.pricingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-foreground underline underline-offset-4 transition-colors hover:text-gold-400"
+              >
+                View pricing
+              </a>
+            </div>
+          </GlassCard>
+        ))}
       </div>
 
-      <div className="mt-12 text-center">
-        <Button href="/ventures" size="md" variant="ghost">
-          View the full venture universe →
-        </Button>
-      </div>
+      <p className="mt-10 text-center text-xs leading-6 text-faint">
+        Payments are processed securely by Stripe. Charges appear as FRICTIONLAB
+        on your statement.
+      </p>
     </Section>
   );
 }

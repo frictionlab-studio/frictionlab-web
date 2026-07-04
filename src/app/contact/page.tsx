@@ -17,10 +17,32 @@ export const metadata: Metadata = {
   },
 };
 
-const channels = [
-  { label: "Email", value: "info.frictionlab@gmail.com", href: "mailto:info.frictionlab@gmail.com" },
-  { label: "Website", value: "frictionlabai.com", href: "https://frictionlabai.com" },
-  { label: "Based in", value: "Dhaka, Bangladesh · US LLC", href: null },
+const channels: {
+  label: string;
+  value: React.ReactNode;
+  href: string | null;
+}[] = [
+  {
+    label: "Support email",
+    value: "support@frictionlabai.com",
+    href: "mailto:support@frictionlabai.com",
+  },
+  {
+    label: "Website",
+    value: "frictionlabai.com",
+    href: "https://frictionlabai.com",
+  },
+  {
+    label: "Mailing address",
+    value: (
+      <>
+        FrictionLab LLC
+        <br />
+        [US MAILING ADDRESS — insert once received from Rocket Wave]
+      </>
+    ),
+    href: null,
+  },
 ];
 
 export default function ContactPage() {
@@ -68,7 +90,7 @@ export default function ContactPage() {
           {/* Inquiry form (mailto-based; wire to a backend later) */}
           <GlassCard glow="blue" padding="lg">
             <form
-              action="mailto:info.frictionlab@gmail.com"
+              action="mailto:support@frictionlabai.com"
               method="post"
               encType="text/plain"
               className="space-y-4"

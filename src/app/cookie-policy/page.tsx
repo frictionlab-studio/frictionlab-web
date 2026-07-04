@@ -59,7 +59,7 @@ export default function CookiePolicyPage() {
           <h2>Contact</h2>
           <p>
             Questions about our use of cookies? Email{" "}
-            <a href="mailto:info.frictionlab@gmail.com">info.frictionlab@gmail.com</a>.
+            <a href="mailto:support@frictionlabai.com">support@frictionlabai.com</a>.
           </p>
         </Prose>
       </Section>

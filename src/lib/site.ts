@@ -21,11 +21,12 @@ export const navLinks = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-// Legal links shown in the footer.
+// Legal + contact links shown in the footer.
 export const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
-  { label: "Cookie Policy", href: "/cookie-policy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Refund Policy", href: "/refund-policy" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 // Social / external links used in the footer.

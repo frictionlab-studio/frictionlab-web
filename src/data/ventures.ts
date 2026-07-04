@@ -1,4 +1,4 @@
-// Ventures data — the FrictionLab portfolio of products and platforms.
+// Ventures data — the FrictionLab portfolio of live products.
 // This is the single source of truth rendered across the site (home, /ventures,
 // and the generated /ventures/[slug] detail pages).
 import type { Accent, VentureStatus } from "@/types/brand";
@@ -10,10 +10,16 @@ export type Venture = {
   name: string;
   // Short one-line hook used on cards.
   tagline: string;
-  // Fuller description for detail pages and SEO.
+  // One plain-sentence description of what the product does and who it's for.
   description: string;
   // Bullet highlights shown on the venture detail page.
   highlights: string[];
+  // Starting price, shown on product cards (e.g. "From $19/mo").
+  price: string;
+  // Link to the live product.
+  liveUrl: string;
+  // Link to the product's pricing page.
+  pricingUrl: string;
   // Lifecycle status badge.
   status: VentureStatus;
   // Neon accent used for the card glow/tag.
@@ -22,146 +28,88 @@ export type Venture = {
   categorySlug: string;
   // Whether to feature this venture prominently.
   featured: boolean;
-  // External or internal link. null when no destination exists yet.
+  // External or internal link. Kept in sync with the live product URL.
   href: string | null;
 };
 
 export const ventures: Venture[] = [
   {
-    slug: "frictionlab",
-    name: "FrictionLab",
-    tagline: "The AI venture studio behind every product here.",
+    slug: "scholarpilot",
+    name: "ScholarPilot",
+    tagline: "Study abroad planning with AI.",
     description:
-      "FrictionLab is the main AI venture studio website — the home base that builds, launches, and scales a portfolio of AI agents, SaaS products, and automation systems.",
+      "Study abroad planning with AI university matching, SOP and CV help, and visa interview prep.",
     highlights: [
-      "Shared design system and AI infrastructure across every venture",
-      "Rapid 0-to-1 product development powered by AI",
-      "US LLC foundation operating from Dhaka, Bangladesh",
+      "University matching based on your profile",
+      "SOP and CV drafting and review",
+      "Visa interview preparation",
     ],
-    status: "In Development",
+    price: "From $19/mo",
+    liveUrl: "https://scholarpilot-topaz.vercel.app",
+    pricingUrl: "https://scholarpilot-topaz.vercel.app/pricing",
+    status: "Live",
     accent: "gold",
-    categorySlug: "startup-building",
+    categorySlug: "education-technology",
     featured: true,
-    href: "/",
+    href: "https://scholarpilot-topaz.vercel.app",
   },
   {
-    slug: "finmet-ai",
-    name: "Finmet AI",
-    tagline: "Finance, markets, and trading intelligence — automated.",
+    slug: "propmate-ai",
+    name: "PropMate AI",
+    tagline: "Property management for landlords.",
     description:
-      "Finmet AI is an AI-powered finance, market intelligence, trading, and financial analysis platform that turns raw market data into clear, actionable decisions.",
+      "Property management for landlords and small agencies.",
     highlights: [
-      "Real-time market intelligence and signal detection",
-      "AI-assisted trading strategy and risk analysis",
-      "Plain-language financial summaries for faster decisions",
+      "Tools for landlords managing their own units",
+      "Built for small property agencies",
     ],
-    status: "In Development",
+    price: "From $49/mo",
+    liveUrl: "https://prop-mate-ai-frontend.vercel.app",
+    pricingUrl: "https://prop-mate-ai-frontend.vercel.app/pricing",
+    status: "Live",
     accent: "blue",
-    categorySlug: "finance-ai",
+    categorySlug: "automation",
     featured: true,
-    href: null,
-  },
-  {
-    slug: "tube-command",
-    name: "Tube Command",
-    tagline: "Your AI command center for YouTube growth.",
-    description:
-      "Tube Command is an AI YouTube growth, video strategy, SEO, and creator command center that helps channels plan, optimize, and scale their content.",
-    highlights: [
-      "AI-driven video ideas, titles, and SEO optimization",
-      "Channel analytics translated into a clear growth plan",
-      "Content calendar and strategy in one command center",
-    ],
-    status: "Coming Soon",
-    accent: "purple",
-    categorySlug: "creator-economy",
-    featured: true,
-    href: null,
+    href: "https://prop-mate-ai-frontend.vercel.app",
   },
   {
     slug: "leadmate-ai",
-    name: "Leadmate AI",
-    tagline: "AI lead generation, CRM, and sales on autopilot.",
-    description:
-      "Leadmate AI is an AI lead generation, CRM, outreach, and sales automation platform that finds, nurtures, and converts leads with minimal manual effort.",
+    name: "LeadMate AI",
+    tagline: "B2B lead generation and outreach.",
+    description: "B2B lead generation and outreach.",
     highlights: [
-      "Automated lead sourcing and enrichment",
-      "Personalized AI outreach at scale",
-      "Built-in CRM with smart follow-up sequences",
+      "Find B2B leads that fit your target market",
+      "Run outreach campaigns from one place",
     ],
-    status: "Coming Soon",
-    accent: "blue",
+    price: "From $49/mo",
+    liveUrl: "https://leadmate-ai-five.vercel.app",
+    // The product has no standalone /pricing route (it 404s); pricing lives in
+    // an on-page section anchored at #pricing.
+    pricingUrl: "https://leadmate-ai-five.vercel.app/#pricing",
+    status: "Live",
+    accent: "purple",
     categorySlug: "automation",
-    featured: false,
-    href: null,
+    featured: true,
+    href: "https://leadmate-ai-five.vercel.app",
   },
   {
-    slug: "lumora",
-    name: "Lumora",
-    tagline: "Creative, brand, and visual intelligence in one studio.",
+    slug: "promptcraft",
+    name: "PromptCraft",
+    tagline: "Prompt builder and library.",
     description:
-      "Lumora is an AI creative, brand, content, and visual intelligence platform that produces on-brand visuals and content at the speed of imagination.",
+      "Prompt builder and library with categories for marketing, code, image, and video.",
     highlights: [
-      "On-brand image, video, and content generation",
-      "Brand kits that keep every asset consistent",
-      "Creative workflows tuned for marketing teams",
+      "Build and save reusable prompts",
+      "Categories for marketing, code, image, and video",
     ],
-    status: "Coming Soon",
-    accent: "purple",
-    categorySlug: "creator-economy",
-    featured: false,
-    href: null,
-  },
-  {
-    slug: "scholar-pilot",
-    name: "Scholar Pilot",
-    tagline: "AI co-pilot for study abroad and admissions.",
-    description:
-      "Scholar Pilot is an AI education consultancy platform for study abroad, IELTS, TOEFL, GRE, GMAT, and SAT prep, university guidance, scholarships, and admissions.",
-    highlights: [
-      "Personalized university and scholarship matching",
-      "AI tutoring for IELTS, TOEFL, GRE, GMAT, and SAT",
-      "Step-by-step admissions and application guidance",
-    ],
-    status: "Coming Soon",
+    price: "From $9/mo",
+    liveUrl: "https://promptcraft-lyart.vercel.app",
+    pricingUrl: "https://promptcraft-lyart.vercel.app/pricing",
+    status: "Live",
     accent: "gold",
-    categorySlug: "education-technology",
-    featured: false,
-    href: null,
-  },
-  {
-    slug: "operator",
-    name: "Operator",
-    tagline: "Your personal AI operator for getting things done.",
-    description:
-      "Operator is a personal AI operator for productivity, habit tracking, workflow automation, business execution, and voice-agent style assistance.",
-    highlights: [
-      "Voice-agent style assistance for daily execution",
-      "Habit tracking and automated workflows",
-      "Turns goals into scheduled, actionable steps",
-    ],
-    status: "Coming Soon",
-    accent: "blue",
-    categorySlug: "ai-agents",
-    featured: false,
-    href: null,
-  },
-  {
-    slug: "prom-craft",
-    name: "Prom Craft",
-    tagline: "Engineer, organize, and reuse world-class prompts.",
-    description:
-      "Prom Craft is a prompt engineering, AI workflow, and prompt library platform for designing, testing, and managing reusable prompts at scale.",
-    highlights: [
-      "Versioned, reusable prompt library",
-      "Test and compare prompt performance",
-      "Shareable AI workflows for teams",
-    ],
-    status: "Coming Soon",
-    accent: "purple",
     categorySlug: "prompt-engineering",
-    featured: false,
-    href: null,
+    featured: true,
+    href: "https://promptcraft-lyart.vercel.app",
   },
 ];
 

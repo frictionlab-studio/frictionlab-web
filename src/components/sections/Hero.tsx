@@ -60,14 +60,13 @@ export function Hero() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-muted sm:text-lg lg:mx-0">
-              FrictionLab is an AI Venture Studio building intelligent software,
-              autonomous agents, SaaS products, and next-generation digital
-              companies from Bangladesh for the world.
+              FrictionLab LLC builds and operates AI software products. We build
+              and run a portfolio of AI tools you can subscribe to today.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <Button href="/ventures" size="lg" variant="primary">
-                Explore Ventures
+              <Button href="/#products" size="lg" variant="primary">
+                See products
               </Button>
               <Button href="/about" size="lg" variant="glass">
                 The Vision

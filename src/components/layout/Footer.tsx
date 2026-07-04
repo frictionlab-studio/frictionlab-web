@@ -25,8 +25,6 @@ const socialIcons: Record<string, React.ReactNode> = {
 };
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="relative mt-20 border-t border-white/10">
       <Container size="wide" className="py-14">
@@ -113,7 +111,7 @@ export function Footer() {
         <div className="mt-6 flex flex-col gap-2 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
           <p className="flex items-center gap-2">
             <img src="/logo.png" alt="FrictionLab" className="h-6 w-auto" />
-            {siteConfig.name} &copy; {year}. All rights reserved.
+            &copy; 2026 FrictionLab LLC.
           </p>
         </div>
       </Container>
