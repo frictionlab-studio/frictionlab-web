@@ -39,21 +39,43 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "paragraph",
-        text: "A venture studio used to require a large team, deep funding, and years of runway. AI has quietly rewritten that equation. Today a small, disciplined team can build, launch, and operate several software companies at once — provided it has the right systems.",
-      },
-      { type: "heading", text: "The studio model, reimagined" },
-      {
-        type: "paragraph",
-        text: "FrictionLab treats every product as a node in one shared system. Design, infrastructure, and AI foundations are built once and reused everywhere, so launching a new venture is closer to configuration than construction.",
-      },
-      { type: "heading", text: "Why Bangladesh, why now" },
-      {
-        type: "paragraph",
-        text: "Operating from Dhaka on a US LLC foundation pairs global market reach with a lean, cost-efficient execution engine. Distance is just another form of friction — and AI removes it.",
+        text: "I studied at North South University and dropped out. What I actually enjoyed was the part where a system either worked or it didn't. Buildings and blueprints take too long to tell you which one. Software tells you in seconds. So I taught myself to code and pointed everything at that instead.",
       },
       {
         type: "paragraph",
-        text: "The goal is not to build one company perfectly. It is to build a machine that builds companies repeatably.",
+        text: "FrictionLab is what came out of that shift. It's registered as a Wyoming LLC, and I run it alone from Tangail, a small district a few hours outside Dhaka. Those two facts sit oddly next to each other on paper, but they're both deliberate. The US entity isn't about pretending to be somewhere I'm not — it's the practical layer that lets Bangladesh-built software sell to a global market without friction on payments, contracts, or trust. The name is literal. Removing friction between an idea and the thing that actually ships is the entire job.",
+      },
+      { type: "heading", text: "Why a studio instead of one product" },
+      {
+        type: "paragraph",
+        text: "Most startup advice assumes you pick one problem and go deep. That's good advice if you have a team and a runway clock. Working alone, I found the opposite more useful: build several products that share the same underlying muscle — auth, billing, email infrastructure, deployment pipelines — so each new one gets cheaper to launch than the last. ScholarPilot handles study-abroad planning for international students. PropMate AI handles property management for landlords and small agencies. PromptCraft, LeadMate AI, TubeCommand, and a few others each solve one specific, narrow problem for one specific kind of user. None of them need to be a unicorn. They need to work, and they need to not require a team to keep working.",
+      },
+      {
+        type: "paragraph",
+        text: "That's the actual definition of a venture studio, stripped of the pitch-deck language: a place that builds companies using shared infrastructure and shared judgment, rather than funding companies someone else builds.",
+      },
+      { type: "heading", text: "What \"AI-first\" means in practice" },
+      {
+        type: "paragraph",
+        text: "I use Claude Code the way a founder with more money would use a small engineering team. Authentication flows, Stripe integrations, email routing, database migrations — the mechanical parts of building software get delegated to it, and I stay in the seat that actually needs a human: deciding what to build, catching the places where an automated fix is wrong for the business even though it's syntactically correct, and doing the parts of running a company that no model can do for you, like talking to an actual customer.",
+      },
+      {
+        type: "paragraph",
+        text: "This isn't a story about replacing engineers with a chatbot. It's closer to what a solo carpenter does with good power tools: the saw doesn't design the cabinet, but it changes what one person can build alone in a day. Three years ago, running seven live products by yourself would have meant either a much smaller scope or a co-founder. Now it means a disciplined stack and a lot of sessions spent reviewing what the tools produced rather than writing it by hand.",
+      },
+      { type: "heading", text: "The parts nobody puts in the pitch" },
+      {
+        type: "paragraph",
+        text: "It would be dishonest to make this sound easier than it is. Working solo means every bug report, every customer email, and every infrastructure decision routes through one inbox, which is mine. There's no one to hand off the parts you're bad at. Progress on any single product is slower than it would be with a dedicated team on it, because attention is split across all of them. And the instinct to keep building new things — a new landing page, a new integration, one more product — is constant, even when the better use of a week is picking up the phone to the handful of people who already said yes and haven't paid yet. That tension between building and selling doesn't go away just because the tools got better.",
+      },
+      { type: "heading", text: "Where this is headed" },
+      {
+        type: "paragraph",
+        text: "The studio model only works if the shared infrastructure keeps getting cheaper to reuse, so most of what happens behind the scenes at FrictionLab is exactly that — building the internal systems, not just the customer-facing products. Aurora, the internal command center that ties the portfolio together, exists for that reason. It's not a product for sale. It's the thing that makes running several products from one desk in Tangail actually sustainable.",
+      },
+      {
+        type: "paragraph",
+        text: "I don't think the interesting story here is \"AI lets one person do the work of ten.\" Most of the time it lets one focused person do the work of two or three, and that's still a meaningful shift if you're starting with nothing but a laptop and a Wyoming filing. The bigger claim I'd make is narrower: the geography that used to decide who got to build global software doesn't decide it anymore. The constraint moved. What's left is the same thing it always was — picking the right problems and actually finishing them.",
       },
     ],
   },
