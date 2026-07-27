@@ -7,12 +7,12 @@ import { Prose } from "@/components/ui/Prose";
 import type { Accent } from "@/types/brand";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Inside the AI Venture Studio from Bangladesh",
   description:
     "FrictionLab is an AI venture studio operating from Bangladesh on a US LLC foundation, building AI agents, SaaS products, and automation systems for the world.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About — FrictionLab",
+    title: "Inside the AI Venture Studio from Bangladesh — FrictionLab",
     description:
       "An AI venture studio built in Bangladesh, engineered for the world.",
     url: "/about",

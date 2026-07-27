@@ -9,12 +9,12 @@ import { posts } from "@/data/posts";
 import { blogCategories, getCategoryBySlug } from "@/data/blog-categories";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Notes on AI, Automation, and Building SaaS",
   description:
     "Lessons, systems, and ideas from inside FrictionLab — covering AI, automation, SaaS, AI agents, prompt engineering, and startup building.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog — FrictionLab",
+    title: "Notes on AI, Automation, and Building SaaS — FrictionLab",
     description:
       "Notes on building with AI from inside the FrictionLab venture studio.",
     url: "/blog",

@@ -6,14 +6,14 @@ import { VentureCard } from "@/components/ui/VentureCard";
 import { ventures } from "@/data/ventures";
 
 export const metadata: Metadata = {
-  title: "Ventures",
+  title: "AI SaaS Products and Automation Platforms",
   description:
-    "Explore the FrictionLab portfolio — AI agents, SaaS products, and automation platforms built and scaled inside the venture studio.",
+    "Browse the FrictionLab portfolio of AI SaaS products and automation platforms, from study-abroad planning to property management, lead generation, and prompts.",
   alternates: { canonical: "/ventures" },
   openGraph: {
-    title: "Ventures — FrictionLab",
+    title: "AI SaaS Products and Automation Platforms — FrictionLab",
     description:
-      "Explore the FrictionLab portfolio of AI agents, SaaS products, and automation platforms.",
+      "Browse the FrictionLab portfolio of AI SaaS products and automation platforms, from study-abroad planning to property management, lead generation, and prompts.",
     url: "/ventures",
   },
 };

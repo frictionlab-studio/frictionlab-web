@@ -1,5 +1,6 @@
 // FeaturedVentures — the Products section: cards for every live product with a
 // one-sentence description, price, a link to the product, and a pricing link.
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -60,6 +61,15 @@ export function FeaturedVentures() {
                 View pricing
               </a>
             </div>
+
+            {/* Internal link to the venture's own page — real site navigation
+                for SEO, separate from the external product links above. */}
+            <Link
+              href={`/ventures/${product.slug}`}
+              className="mt-4 text-sm font-medium text-muted underline underline-offset-4 transition-colors hover:text-gold-400"
+            >
+              Product details
+            </Link>
           </GlassCard>
         ))}
       </div>

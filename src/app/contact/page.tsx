@@ -6,12 +6,12 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Our AI Venture Studio in Bangladesh",
   description:
     "Get in touch with FrictionLab — partner on a venture, explore collaboration, or start a conversation about building with AI.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact — FrictionLab",
+    title: "Contact Our AI Venture Studio in Bangladesh — FrictionLab",
     description: "Start a conversation with the FrictionLab venture studio.",
     url: "/contact",
   },

@@ -35,13 +35,16 @@ export async function generateMetadata({
   const venture = getVentureBySlug(slug);
   if (!venture) return { title: "Venture not found" };
 
+  // Prefer the longer SEO copy when present; fall back to the short visible one.
+  const metaDescription = venture.metaDescription ?? venture.description;
+
   return {
     title: venture.name,
-    description: venture.description,
+    description: metaDescription,
     alternates: { canonical: `/ventures/${venture.slug}` },
     openGraph: {
       title: `${venture.name} — ${siteConfig.name}`,
-      description: venture.description,
+      description: metaDescription,
       url: `/ventures/${venture.slug}`,
       type: "website",
     },

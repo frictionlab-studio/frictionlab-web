@@ -12,6 +12,10 @@ export type Venture = {
   tagline: string;
   // One plain-sentence description of what the product does and who it's for.
   description: string;
+  // Optional longer description used only for SEO <meta> tags (target 150-160
+  // chars). Falls back to `description` when omitted. Kept separate so the
+  // visible card/detail copy stays short.
+  metaDescription?: string;
   // Bullet highlights shown on the venture detail page.
   highlights: string[];
   // Starting price, shown on product cards (e.g. "From $19/mo").
@@ -39,6 +43,8 @@ export const ventures: Venture[] = [
     tagline: "Study abroad planning with AI.",
     description:
       "Study abroad planning with AI university matching, SOP and CV help, and visa interview prep.",
+    metaDescription:
+      "ScholarPilot is an AI study-abroad planner for students, with university matching to your profile, SOP and CV drafting and review, and visa interview prep.",
     highlights: [
       "University matching based on your profile",
       "SOP and CV drafting and review",
@@ -59,6 +65,8 @@ export const ventures: Venture[] = [
     tagline: "Property management for landlords.",
     description:
       "Property management for landlords and small agencies.",
+    metaDescription:
+      "PropMate AI is property management software for landlords and small agencies, with tools to manage your own rental units and run daily operations in one place.",
     highlights: [
       "Tools for landlords managing their own units",
       "Built for small property agencies",

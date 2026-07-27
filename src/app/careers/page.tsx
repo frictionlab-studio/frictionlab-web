@@ -8,12 +8,12 @@ import { Button } from "@/components/ui/Button";
 import type { Accent } from "@/types/brand";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Work With an AI-First Venture Studio Remotely",
   description:
     "Join FrictionLab — an AI venture studio building intelligent software from Bangladesh for the world. Explore roles and ways to collaborate.",
   alternates: { canonical: "/careers" },
   openGraph: {
-    title: "Careers — FrictionLab",
+    title: "Work With an AI-First Venture Studio Remotely — FrictionLab",
     description: "Build the future of AI-first companies with FrictionLab.",
     url: "/careers",
   },
