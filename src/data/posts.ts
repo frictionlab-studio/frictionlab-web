@@ -28,6 +28,54 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-i-use-claude-code-to-run-seven-products-solo",
+    title: "How I Use Claude Code to Run Seven AI Products Solo",
+    excerpt:
+      "Seven live AI products, one person. The honest version of how that works: Claude Code used like an engineering hire, and a hard line about which decisions never get delegated.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-07-29",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "FrictionLab runs seven AI SaaS products. There is one person on the team. Every session, when people ask how that's possible, the honest answer disappoints them a little: there's no secret framework, no team of contractors hiding behind the scenes. It's Claude Code, used the way you'd use an actual engineering hire, and a set of habits about what I do and don't hand off.",
+      },
+      { type: "heading", text: "The division of labor" },
+      {
+        type: "paragraph",
+        text: "I make every decision that requires judgment about the business: what to build, what to cut, how to price something, which bug actually matters to a real customer versus which one is just annoying to look at. Claude Code makes almost every decision about how to implement what I've decided. Database schema, API integrations, auth flows, deployment configuration, the exact wiring between Stripe and a webhook — all of that runs through it.",
+      },
+      {
+        type: "paragraph",
+        text: "The split isn't \"AI does the easy parts, I do the hard parts.\" Plenty of what Claude Code handles is genuinely hard in the way that matters to an engineer: getting a Cloudflare Email Routing SPF record to coexist with a Resend sending domain without breaking either one is fiddly, unforgiving work. I don't do that work. I read the explanation of what was done, decide if it matches what the business actually needs, and either approve it or push back.",
+      },
+      { type: "heading", text: "Where it goes wrong if you're not careful" },
+      {
+        type: "paragraph",
+        text: "The failure mode isn't the AI writing bad code. In my experience it's the opposite problem: the code is usually fine, syntactically correct, and passes whatever tests exist. The risk is approving something that's technically right and wrong for the business, because it's easy to skim a diff, see that it compiles, and move on without asking whether this is actually the right call.",
+      },
+      {
+        type: "paragraph",
+        text: "A concrete example: early in one product's build, a document-rejection email feature got flagged as ready to ship. It was correct code. It also would have sent real emails from an unverified sending domain, which some providers silently throttle or block. Catching that wasn't a coding problem. It was a \"does this actually work in production, for real users, today\" problem, and that's the part that still needs a human paying attention, every time.",
+      },
+      { type: "heading", text: "What actually changed for someone building alone" },
+      {
+        type: "paragraph",
+        text: "Three years ago, seven live products from one person would have meant either a co-founder or a much smaller scope than I'm running now. The tools didn't remove the need for engineering judgment. They removed the need to personally type out every implementation of that judgment, which is a different thing.",
+      },
+      {
+        type: "paragraph",
+        text: "What that buys, concretely: I can go from \"students need visa interview practice\" to a working feature in ScholarPilot in a single session, instead of that idea sitting in a backlog for weeks waiting on engineering time I don't have. The bottleneck moved from \"can we build this\" to \"should we build this, and is it actually the right next move for the business\" — which, if I'm honest, is a harder and more interesting problem than the one it replaced.",
+      },
+      { type: "heading", text: "The part I'm still working on" },
+      {
+        type: "paragraph",
+        text: "Building fast doesn't fix the actual bottleneck once a product is live and working. I have warm leads on one of my products who liked what they saw and haven't converted, and the tools that let me ship seven products didn't do anything to fix that — because that's not an engineering problem. It's a \"pick up the phone\" problem, and no amount of AI-assisted development touches it. If there's a lesson in running a solo AI-first studio that's worth taking seriously, it's that one: the tools change what you can build alone, not what you're willing to actually go sell.",
+      },
+    ],
+  },
+  {
     slug: "building-ai-venture-studio-from-bangladesh",
     title: "Building an AI Venture Studio from Bangladesh",
     excerpt:
