@@ -39,19 +39,6 @@ export function websiteSchema() {
   };
 }
 
-// Product schema — a single venture/product in the portfolio.
-export function productSchema(venture: Venture) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: venture.name,
-    description: venture.description,
-    url: `${siteConfig.url}/ventures/${venture.slug}`,
-    brand: { "@type": "Brand", name: siteConfig.name },
-    category: venture.categorySlug,
-  };
-}
-
 // SoftwareApplication schema — a single venture described as a web app.
 // Deliberately minimal: no aggregateRating, review, or offers/pricing fields,
 // because we have no real review or rating data yet and publishing fabricated

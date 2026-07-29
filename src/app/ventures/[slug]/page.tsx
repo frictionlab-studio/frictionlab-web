@@ -16,7 +16,6 @@ import {
 import { getCategoryBySlug } from "@/data/blog-categories";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
-  productSchema,
   softwareApplicationSchema,
   breadcrumbSchema,
 } from "@/lib/jsonld";
@@ -67,7 +66,6 @@ export default async function VentureDetailPage({ params }: PageProps) {
     <main className="flex-1">
       <JsonLd
         data={[
-          productSchema(venture),
           softwareApplicationSchema(venture),
           breadcrumbSchema(venture),
         ]}
