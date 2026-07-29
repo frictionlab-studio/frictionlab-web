@@ -15,7 +15,11 @@ import {
 } from "@/data/ventures";
 import { getCategoryBySlug } from "@/data/blog-categories";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { productSchema } from "@/lib/jsonld";
+import {
+  productSchema,
+  softwareApplicationSchema,
+  breadcrumbSchema,
+} from "@/lib/jsonld";
 import { siteConfig } from "@/lib/site";
 
 // Pre-render one static page per venture at build time.
@@ -61,7 +65,13 @@ export default async function VentureDetailPage({ params }: PageProps) {
 
   return (
     <main className="flex-1">
-      <JsonLd data={productSchema(venture)} />
+      <JsonLd
+        data={[
+          productSchema(venture),
+          softwareApplicationSchema(venture),
+          breadcrumbSchema(venture),
+        ]}
+      />
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32">

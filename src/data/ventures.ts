@@ -16,6 +16,10 @@ export type Venture = {
   // chars). Falls back to `description` when omitted. Kept separate so the
   // visible card/detail copy stays short.
   metaDescription?: string;
+  // schema.org applicationCategory for the SoftwareApplication JSON-LD.
+  // "EducationalApplication" for study/learning tools, "BusinessApplication"
+  // for everything else. Drives structured data only — never shown in the UI.
+  applicationCategory: "EducationalApplication" | "BusinessApplication";
   // Bullet highlights shown on the venture detail page.
   highlights: string[];
   // Starting price, shown on product cards (e.g. "From $19/mo").
@@ -50,6 +54,7 @@ export const ventures: Venture[] = [
       "SOP and CV drafting and review",
       "Visa interview preparation",
     ],
+    applicationCategory: "EducationalApplication",
     price: "From $19/mo",
     liveUrl: "https://scholarpilot.support",
     pricingUrl: "https://scholarpilot.support/pricing",
@@ -71,6 +76,7 @@ export const ventures: Venture[] = [
       "Tools for landlords managing their own units",
       "Built for small property agencies",
     ],
+    applicationCategory: "BusinessApplication",
     price: "From $49/mo",
     liveUrl: "https://prop-mate-ai-frontend.vercel.app",
     pricingUrl: "https://prop-mate-ai-frontend.vercel.app/pricing",
@@ -89,6 +95,7 @@ export const ventures: Venture[] = [
       "Find B2B leads that fit your target market",
       "Run outreach campaigns from one place",
     ],
+    applicationCategory: "BusinessApplication",
     price: "From $49/mo",
     liveUrl: "https://leadmate-ai-five.vercel.app",
     // The product has no standalone /pricing route (it 404s); pricing lives in
@@ -110,6 +117,7 @@ export const ventures: Venture[] = [
       "Build and save reusable prompts",
       "Categories for marketing, code, image, and video",
     ],
+    applicationCategory: "BusinessApplication",
     price: "From $9/mo",
     liveUrl: "https://promptcraft-lyart.vercel.app",
     pricingUrl: "https://promptcraft-lyart.vercel.app/pricing",

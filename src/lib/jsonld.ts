@@ -52,6 +52,54 @@ export function productSchema(venture: Venture) {
   };
 }
 
+// SoftwareApplication schema — a single venture described as a web app.
+// Deliberately minimal: no aggregateRating, review, or offers/pricing fields,
+// because we have no real review or rating data yet and publishing fabricated
+// values would be misleading structured data (and risk Google penalties).
+export function softwareApplicationSchema(venture: Venture) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: venture.name,
+    // Reuse the page's own meta description verbatim (same fallback as the
+    // <meta> tag) — no new marketing copy is invented here.
+    description: venture.metaDescription ?? venture.description,
+    // The product's own live URL, not the FrictionLab detail page.
+    url: venture.liveUrl,
+    applicationCategory: venture.applicationCategory,
+    operatingSystem: "Web",
+  };
+}
+
+// BreadcrumbList schema — the Home > Ventures > <Product> trail for a detail
+// page, using the site's real URLs.
+export function breadcrumbSchema(venture: Venture) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Ventures",
+        item: `${siteConfig.url}/ventures`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: venture.name,
+        item: `${siteConfig.url}/ventures/${venture.slug}`,
+      },
+    ],
+  };
+}
+
 // BlogPosting schema — a single article.
 export function blogPostingSchema(input: {
   title: string;
