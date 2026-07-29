@@ -40,9 +40,10 @@ export function websiteSchema() {
 }
 
 // SoftwareApplication schema — a single venture described as a web app.
-// Deliberately minimal: no aggregateRating, review, or offers/pricing fields,
-// because we have no real review or rating data yet and publishing fabricated
-// values would be misleading structured data (and risk Google penalties).
+// The Offer uses the real lowest paid-tier price from the product's live
+// pricing page. We deliberately omit aggregateRating/review, because we have
+// no real review data yet and publishing fabricated values would be misleading
+// structured data (and risk Google penalties).
 export function softwareApplicationSchema(venture: Venture) {
   return {
     "@context": "https://schema.org",
@@ -55,6 +56,15 @@ export function softwareApplicationSchema(venture: Venture) {
     url: venture.liveUrl,
     applicationCategory: venture.applicationCategory,
     operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      // Numeric string per schema.org convention; real lowest paid-tier price.
+      price: venture.startingPriceUsd.toString(),
+      priceCurrency: "USD",
+      // Dedicated pricing page where one exists; otherwise the homepage
+      // pricing section anchor.
+      url: venture.pricingUrl,
+    },
   };
 }
 

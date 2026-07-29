@@ -20,6 +20,11 @@ export type Venture = {
   // "EducationalApplication" for study/learning tools, "BusinessApplication"
   // for everything else. Drives structured data only — never shown in the UI.
   applicationCategory: "EducationalApplication" | "BusinessApplication";
+  // Numeric starting price (lowest PAID tier, in USD) used as the single
+  // representative price point in the SoftwareApplication Offer schema.
+  // Must match the live pricing page; verified against each product's pricing
+  // page. Structured data only — the visible price string is `price` above.
+  startingPriceUsd: number;
   // Bullet highlights shown on the venture detail page.
   highlights: string[];
   // Starting price, shown on product cards (e.g. "From $19/mo").
@@ -55,6 +60,7 @@ export const ventures: Venture[] = [
       "Visa interview preparation",
     ],
     applicationCategory: "EducationalApplication",
+    startingPriceUsd: 19,
     price: "From $19/mo",
     liveUrl: "https://scholarpilot.support",
     pricingUrl: "https://scholarpilot.support/pricing",
@@ -77,6 +83,7 @@ export const ventures: Venture[] = [
       "Built for small property agencies",
     ],
     applicationCategory: "BusinessApplication",
+    startingPriceUsd: 49,
     price: "From $49/mo",
     liveUrl: "https://prop-mate-ai-frontend.vercel.app",
     pricingUrl: "https://prop-mate-ai-frontend.vercel.app/pricing",
@@ -96,6 +103,7 @@ export const ventures: Venture[] = [
       "Run outreach campaigns from one place",
     ],
     applicationCategory: "BusinessApplication",
+    startingPriceUsd: 49,
     price: "From $49/mo",
     liveUrl: "https://leadmate-ai-five.vercel.app",
     // The product has no standalone /pricing route (it 404s); pricing lives in
@@ -118,6 +126,7 @@ export const ventures: Venture[] = [
       "Categories for marketing, code, image, and video",
     ],
     applicationCategory: "BusinessApplication",
+    startingPriceUsd: 9,
     price: "From $9/mo",
     liveUrl: "https://promptcraft-lyart.vercel.app",
     pricingUrl: "https://promptcraft-lyart.vercel.app/pricing",
