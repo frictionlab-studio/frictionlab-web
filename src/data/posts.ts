@@ -12,8 +12,11 @@ export type BlogPost = {
   slug: string;
   // Post title.
   title: string;
-  // Short teaser shown on cards and used as the meta description.
+  // Short teaser shown on cards and used as the default meta description.
   excerpt: string;
+  // Optional standalone meta description for SEO, when it should differ from
+  // the on-page excerpt. Falls back to `excerpt` (same pattern as ventures).
+  metaDescription?: string;
   // Linked blog category slug (see blog-categories.ts).
   categorySlug: string;
   // Author display name.
@@ -27,6 +30,61 @@ export type BlogPost = {
 };
 
 export const posts: BlogPost[] = [
+  {
+    slug: "ai-venture-studio-vs-accelerator-vs-agency",
+    title: "AI Venture Studio vs Accelerator vs Agency: What's Actually Different",
+    excerpt:
+      "Three labels, one question people keep asking. The honest breakdown of what separates a venture studio from an accelerator and an agency — and which one actually describes running seven AI products alone.",
+    metaDescription:
+      "Venture studio, accelerator, or agency — the labels get used interchangeably online. Here's what actually separates them, and which one FrictionLab really is.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-08-03",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "People ask what FrictionLab is more often than they ask what it does. Fair question. The three labels — venture studio, accelerator, agency — get used almost interchangeably online, and most explanations of the differences read like they were written by someone trying to sound smart at a pitch event rather than someone who's actually run one of these. Here's the version without the jargon.",
+      },
+      { type: "heading", text: "An agency sells time" },
+      {
+        type: "paragraph",
+        text: "An agency takes a client's problem and builds a solution for money, on the client's timeline, to the client's spec. The client owns the result. The agency owns nothing when the contract ends except the fee already paid and whatever reputation the work earned. This is a completely legitimate business model — a huge amount of software gets built this way — but the agency's upside is capped at hours billed. Do the work well enough and the reward is more hours to bill.",
+      },
+      { type: "heading", text: "An accelerator sells belief, briefly" },
+      {
+        type: "paragraph",
+        text: "An accelerator takes a small stake in a company that already exists, in exchange for a few months of mentorship, some cash, and a demo day at the end. The company was someone else's idea before the accelerator ever met them. The accelerator's job is compression: take a business that would develop over two years and force a version of it into three months. It works well for teams that already have conviction and just need speed and connections. It doesn't build anything itself.",
+      },
+      { type: "heading", text: "A venture studio builds the company from inside" },
+      {
+        type: "paragraph",
+        text: "This is the model FrictionLab runs. The studio doesn't wait for someone to bring an idea and a team. It generates the idea, builds the product, and either runs the resulting company itself or spins it out with the studio retaining ownership.",
+      },
+      {
+        type: "paragraph",
+        text: "The incentive structure is the whole difference. An agency gets paid whether or not the client's product ever finds a single user — the invoice clears either way. An accelerator gets a stake in a company that already had momentum before it walked in the door. A studio has neither safety net. If the product doesn't work, there's no client to bill and no other team's traction to point to. The studio absorbs the loss directly, which is exactly why studios build fewer things per year than agencies and take longer per product than accelerators expect. The risk sits in one place instead of being spread across a client roster or a portfolio of founders who did the early work themselves.",
+      },
+      { type: "heading", text: "What this looks like inside FrictionLab" },
+      {
+        type: "paragraph",
+        text: "In practice, every product in the portfolio — ScholarPilot, PropMate AI, and the rest — started the same way: an idea I picked, not a client's brief or a founder's pitch deck. I write the spec, build the MVP with Claude Code doing the engineering lift, and I'm the one deciding whether a product ships, pivots, or gets shelved. There's no client relationship to maintain and no board to report to before the thing has proven anything.",
+      },
+      {
+        type: "paragraph",
+        text: "The upside of that is real ownership. Every dollar ScholarPilot eventually makes belongs to the studio, not a client who commissioned it. The downside is just as real: no mentor network, no cohort of other founders solving the same problems in parallel, no cash advance while the product finds its first customer. Whatever FrictionLab needs — capital, patience, a second opinion — has to come from inside the studio itself, at least for now.",
+      },
+      { type: "heading", text: "So which one is FrictionLab" },
+      {
+        type: "paragraph",
+        text: "Mostly a venture studio, run at a scale of one. It doesn't have the balance sheet of an Atomic or an Expa, and it isn't pretending to. What it shares with those larger studios is the structural choice that actually defines the category: the studio is the one taking the risk on the idea, not a client paying to have someone else's idea executed, and not an accelerator collecting equity in a bet someone else already placed.",
+      },
+      {
+        type: "paragraph",
+        text: "That's the honest answer to the question people ask more often than they realize.",
+      },
+    ],
+  },
   {
     slug: "how-i-use-claude-code-to-run-seven-products-solo",
     title: "How I Use Claude Code to Run Seven AI Products Solo",

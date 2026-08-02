@@ -39,12 +39,12 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.excerpt,
+    description: post.metaDescription ?? post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
       title: `${post.title} — ${siteConfig.name}`,
-      description: post.excerpt,
+      description: post.metaDescription ?? post.excerpt,
       url: `/blog/${post.slug}`,
       publishedTime: post.date,
       authors: [post.author],
@@ -65,7 +65,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <JsonLd
         data={blogPostingSchema({
           title: post.title,
-          description: post.excerpt,
+          description: post.metaDescription ?? post.excerpt,
           date: post.date,
           author: post.author,
           slug: post.slug,
