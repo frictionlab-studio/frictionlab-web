@@ -33,6 +33,69 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-to-validate-a-saas-idea-before-writing-a-line-of-code",
+    title: "How to Validate a SaaS Idea Before Writing a Line of Code",
+    excerpt:
+      "ScholarPilot had real signups before it was built. The other eight products in the portfolio didn't. Here's what that difference actually proved, and the honest limit of what it proved.",
+    metaDescription:
+      "One product got 10 signups before a line of code existed. Eight others didn't. An honest look at what that validation step actually bought, and what it didn't.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "ScholarPilot had 10 people sign up before I'd built a single feature. Every other product in the portfolio went straight from idea to build with no equivalent step. Same founder, same tools, two completely different starting points — and it's worth being honest about what that difference actually bought me, because it wasn't a sale.",
+      },
+      { type: "heading", text: "What validation actually looked like" },
+      {
+        type: "paragraph",
+        text: "Not a survey. Not a set of mockups shown to friends who'd say yes to be polite. A real page, describing the real thing ScholarPilot would do, asking for one concrete low-friction commitment: sign up for early access. Nothing hypothetical about the ask — it was the actual first step of the actual product, just without the product behind it yet.",
+      },
+      {
+        type: "paragraph",
+        text: "Ten people took that step. That's the entire validation. Not a focus group, not a survey response, a real action from a real person before any code existed to justify it.",
+      },
+      {
+        type: "heading",
+        text: "Why this is different from what I did with everything else",
+      },
+      {
+        type: "paragraph",
+        text: "Every other product started with me deciding it was worth building, then building it. No page, no ask, no real person's action standing between the idea and the code. The idea felt validated because it made sense to me, which is not the same thing as anyone else confirming it with an action.",
+      },
+      {
+        type: "paragraph",
+        text: "That's the actual difference this post is about. Not \"ScholarPilot succeeded and the others didn't\" — none of them have a paying customer yet, ScholarPilot included. The difference is that ScholarPilot had ten real signals before I spent a single hour building, and the rest had zero. One of those starting points gives you information. The other just gives you a head start on being wrong.",
+      },
+      {
+        type: "heading",
+        text: "What validation is actually worth, honestly",
+      },
+      {
+        type: "paragraph",
+        text: "Ten signups is real evidence someone will give up an email address for this. It is not evidence anyone will pay for it. I want to be precise about that line, because it's tempting to treat pre-launch signups as proof of a business, and they aren't — they're proof of curiosity, which is a floor, not a finish line. ScholarPilot still has zero paying customers despite having the best validation story in the portfolio. Validation lowers the odds you're building something nobody wants. It doesn't remove the actual selling that has to happen after.",
+      },
+      {
+        type: "heading",
+        text: "What I'd actually tell someone before they write code",
+      },
+      {
+        type: "paragraph",
+        text: "Build the smallest possible version of the real ask, not a generic \"would you be interested\" question. The ask should be the actual first step of the actual product — a signup, a waitlist tied to a specific promised outcome, a form asking for the exact information the product would need on day one. A vague interest question gets a vague yes. A specific commitment gets a real answer.",
+      },
+      {
+        type: "paragraph",
+        text: "Set the bar before you look at the number, not after. Decide in advance what counts as enough signal to justify building — and just as important, what doesn't — because it's easy to talk yourself into three signups being encouraging once you're already attached to the idea.",
+      },
+      {
+        type: "paragraph",
+        text: "And treat the validation step as genuinely cheap compared to the alternative. A landing page and an honest ask cost a day. The eight products I built without one cost weeks each, and I still don't know for most of them whether anyone would have signed up if I'd asked first.",
+      },
+    ],
+  },
+  {
     slug: "how-to-price-a-saas-product-when-you-have-zero-customers",
     title: "How to Price a SaaS Product When You Have Zero Customers",
     excerpt:
