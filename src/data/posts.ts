@@ -31,6 +31,61 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "claude-code-vs-hiring-a-developer-real-comparison",
+    title: "Claude Code vs Hiring a Developer: A Real Comparison",
+    excerpt:
+      "Claude Code has been the entire engineering team behind nine live products. Here's the honest version — including the failures — of what that actually replaces and where it doesn't.",
+    metaDescription:
+      "Nine products, zero employees. An honest comparison of what Claude Code actually replaces, where it fails, and when hiring a real developer becomes necessary.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "For the life of FrictionLab, my engineering team has been Claude Code, not a person. Nine products live, zero employees. Here's the honest version of what that trade actually gets you, and where it falls short.",
+      },
+      { type: "heading", text: "What a developer gives you that a tool can't" },
+      {
+        type: "paragraph",
+        text: "A developer you hire brings judgment you didn't ask for. They notice the thing you didn't know to specify, push back when an idea is bad, and carry domain knowledge that took them years to build. They have something at stake beyond the current prompt: a reputation, a career, a reason to tell you the truth even when it's inconvenient. None of that comes from a tool, no matter how good the tool is at writing code.",
+      },
+      {
+        type: "paragraph",
+        text: "The cost of that is real too. Salary or equity, a hiring process, onboarding time, and the ongoing overhead of managing someone whose judgment you're relying on. For a funded team, that trade makes sense. For a solo, bootstrapped studio, it isn't available yet regardless of whether it would help.",
+      },
+      { type: "heading", text: "What Claude Code actually replaces" },
+      {
+        type: "paragraph",
+        text: "Not judgment. Execution. Once I know what I want built and can describe it clearly, it gets built in about the time it takes to write the ticket, not wait for someone to pick it up. That's the entire reason nine products exist: not because building got easier in some abstract sense, but because the gap between deciding something and having it working shrank from weeks to hours.",
+      },
+      {
+        type: "paragraph",
+        text: "There's no negotiation, no onboarding, no payroll. For someone who can't afford to hire even one developer yet, that's not a minor convenience — it's the difference between shipping and not shipping at all.",
+      },
+      { type: "heading", text: "Where it actually breaks" },
+      {
+        type: "paragraph",
+        text: "It isn't a clean win. On one build, a script it had written got silently dropped partway through a longer multi-part task — nothing said it failed, it just wasn't there afterward, and only a deliberate check caught it. On another project, pasting a code block containing a raw link tag came through with the opening tag stripped, while everything around it looked fine. Neither failure was dramatic, and both were fixable once caught, but \"once caught\" is the operative phrase.",
+      },
+      {
+        type: "paragraph",
+        text: "That's the real discipline this requires: review every change before it goes live, test against the actual database rather than trusting the code by itself, run one command at a time instead of chaining a sequence and assuming it all landed. Skip that discipline and the tool's mistakes look identical to correct output right up until something breaks in production.",
+      },
+      { type: "heading", text: "The actual comparison" },
+      {
+        type: "paragraph",
+        text: "Claude Code doesn't replace a developer's judgment. It replaces the six or seven developers a growing studio would otherwise need to hire, one per product, none of whom I could have afforded yet. That's a different comparison than \"which one writes better code.\" It's the difference between running nine live products as one person or running zero as one person waiting to afford the first hire.",
+      },
+      { type: "heading", text: "When hiring actually becomes the right call" },
+      {
+        type: "paragraph",
+        text: "Once a single product needs to scale past what one person can safely review, or needs expertise I genuinely don't have, that's the point a hire stops being aspirational and starts being necessary. Right now, every product is still small enough that I can verify everything myself. That won't stay true forever, and the day it stops being true is the day this comparison changes.",
+      },
+    ],
+  },
+  {
     slug: "what-i-learned-shipping-seven-products-zero-customers",
     title: "What I Learned Shipping Seven Products and Getting Zero Customers",
     excerpt:
