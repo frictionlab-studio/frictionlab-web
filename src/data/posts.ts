@@ -31,6 +31,62 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-to-price-a-saas-product-when-you-have-zero-customers",
+    title: "How to Price a SaaS Product When You Have Zero Customers",
+    excerpt:
+      "Pricing research without a real customer to react to isn't research — it's avoidance wearing a spreadsheet. Here's the actual reasoning behind ScholarPilot's four pricing tiers, with zero customers to validate any of it.",
+    metaDescription:
+      "No customers, no data, still had to pick a price. The actual reasoning behind ScholarPilot's pricing tiers, and the honest caveat that comes with it.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "Every pricing guide assumes you have data. Conversion rates by tier, churn by price point, what customers actually said when a number was too high. I have none of that. ScholarPilot has never had a paying customer, and I still had to put a number on it before launch. Here's what I actually did, and why I think it was the right call despite having nothing to validate it against.",
+      },
+      {
+        type: "heading",
+        text: "The trap is treating pricing as a research problem",
+      },
+      {
+        type: "paragraph",
+        text: "The instinct, when you have no data, is to go find some. Read pricing psychology, study ten competitors, build a spreadsheet of willingness-to-pay models. I did some of this, and it produced exactly one useful thing: a sense of the range other tools in the category charge. Everything past that was research standing in for the thing I actually needed to do, which was pick a number and start talking to people about it.",
+      },
+      {
+        type: "paragraph",
+        text: "Pricing research without a real customer to react to it isn't research. It's the same avoidance pattern as building another dashboard instead of sending an email — just wearing a spreadsheet instead of a folder.",
+      },
+      { type: "heading", text: "What I actually priced ScholarPilot at" },
+      {
+        type: "paragraph",
+        text: "Free, then Starter at $19 a month, Pro at $49, Partner at $199. No model produced these numbers. Here's the actual reasoning:",
+      },
+      {
+        type: "paragraph",
+        text: "Free removes the only real barrier to a first look — a student deciding whether to trust an unknown platform with their study-abroad plans. Starter at $19 sits just under the round $20 mark, priced for an individual student comparing it against a single IELTS prep course or one paid consultation, not against enterprise software. Pro at $49 is the plan built for someone who wants every tool active at once, not a superior version of Starter — the tiers should split by usage breadth, not by manufactured feature-gating. Partner at $199 is a different buyer entirely: a coaching center serving many students at once, where the price needs to make sense against what they already charge each student, not against the individual plans above it.",
+      },
+      {
+        type: "paragraph",
+        text: "None of these numbers came from a survey. They came from asking what a specific person would be comparing this against, and pricing relative to that alternative instead of relative to how many hours I spent building it.",
+      },
+      { type: "heading", text: "The honest caveat" },
+      {
+        type: "paragraph",
+        text: "This is a guess, not a conclusion. Zero paying customers means zero evidence any of these four numbers are right. What I do have confidence in is the reasoning behind them, which means if $19 turns out to be wrong, I'll know which assumption broke and can fix that one thing instead of re-deriving the whole structure from scratch.",
+      },
+      {
+        type: "heading",
+        text: "What I'd actually tell another founder in this position",
+      },
+      {
+        type: "paragraph",
+        text: "Price against a named alternative your buyer already pays for, not against your own effort. Treat the first price as reversible — it's a hypothesis you're about to test with real conversations, not a permanent commitment. And don't let getting the number perfect become the reason you haven't asked anyone to pay it yet. A number in front of a real lead teaches you more in one conversation than another week of research ever will.",
+      },
+    ],
+  },
+  {
     slug: "claude-code-vs-hiring-a-developer-real-comparison",
     title: "Claude Code vs Hiring a Developer: A Real Comparison",
     excerpt:
