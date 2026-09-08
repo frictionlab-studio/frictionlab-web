@@ -105,20 +105,41 @@ export default async function BlogPostPage({ params }: PageProps) {
       <Container size="narrow" className="pb-24">
         <article className="space-y-6">
           <p className="text-lg leading-8 text-muted">{post.excerpt}</p>
-          {post.content.map((block, index) =>
-            block.type === "heading" ? (
-              <h2
-                key={index}
-                className="pt-4 text-2xl font-semibold text-foreground"
-              >
-                {block.text}
-              </h2>
-            ) : (
+          {post.content.map((block, index) => {
+            if (block.type === "heading") {
+              return (
+                <h2
+                  key={index}
+                  className="pt-4 text-2xl font-semibold text-foreground"
+                >
+                  {block.text}
+                </h2>
+              );
+            }
+
+            // Bulleted list — same body type as a paragraph, indented with a
+            // faint marker so it reads as part of the article, not a callout.
+            if (block.type === "list") {
+              return (
+                <ul
+                  key={index}
+                  className="list-disc space-y-3 pl-6 marker:text-faint"
+                >
+                  {block.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="leading-8 text-muted">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+
+            return (
               <p key={index} className="leading-8 text-muted">
                 {block.text}
               </p>
-            ),
-          )}
+            );
+          })}
         </article>
       </Container>
     </main>

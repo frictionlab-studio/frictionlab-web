@@ -2,10 +2,12 @@
 // Replace with a CMS later; the shape (and the page code) stays the same.
 
 // A single block of article content. Kept simple so we can render it without
-// a markdown dependency: each block is either a subheading or a paragraph.
+// a markdown dependency: each block is a subheading, a paragraph, or a bulleted
+// list (used when a passage is genuinely enumerable, e.g. pricing tiers).
 export type ContentBlock =
   | { type: "heading"; text: string }
-  | { type: "paragraph"; text: string };
+  | { type: "paragraph"; text: string }
+  | { type: "list"; items: string[] };
 
 export type BlogPost = {
   // URL-safe identifier, e.g. used at /blog/<slug>.
@@ -64,8 +66,13 @@ export const posts: BlogPost[] = [
         text: "Free, then Starter at $19 a month, Pro at $49, Partner at $199. No model produced these numbers. Here's the actual reasoning:",
       },
       {
-        type: "paragraph",
-        text: "Free removes the only real barrier to a first look — a student deciding whether to trust an unknown platform with their study-abroad plans. Starter at $19 sits just under the round $20 mark, priced for an individual student comparing it against a single IELTS prep course or one paid consultation, not against enterprise software. Pro at $49 is the plan built for someone who wants every tool active at once, not a superior version of Starter — the tiers should split by usage breadth, not by manufactured feature-gating. Partner at $199 is a different buyer entirely: a coaching center serving many students at once, where the price needs to make sense against what they already charge each student, not against the individual plans above it.",
+        type: "list",
+        items: [
+          "Free removes the only real barrier to a first look — a student deciding whether to trust an unknown platform with their study-abroad plans.",
+          "Starter at $19 sits just under the round $20 mark, priced for an individual student comparing it against a single IELTS prep course or one paid consultation, not against enterprise software.",
+          "Pro at $49 is the plan built for someone who wants every tool active at once, not a superior version of Starter — the tiers should split by usage breadth, not by manufactured feature-gating.",
+          "Partner at $199 is a different buyer entirely: a coaching center serving many students at once, where the price needs to make sense against what they already charge each student, not against the individual plans above it.",
+        ],
       },
       {
         type: "paragraph",
