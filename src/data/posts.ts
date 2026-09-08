@@ -31,6 +31,64 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "what-i-learned-shipping-seven-products-zero-customers",
+    title: "What I Learned Shipping Seven Products and Getting Zero Customers",
+    excerpt:
+      "Building was never the hard part. Here's the honest breakdown of what seven shipped products and zero paying customers actually taught me about avoidance disguised as progress.",
+    metaDescription:
+      "Seven products shipped, zero paying customers. What that pattern actually revealed about building versus selling, and what changes now.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "Here's the plain version: I've shipped seven products under FrictionLab. Two more have joined since. Paying customers across all of them: zero. This isn't a confession, and it isn't false modesty either. It's the most useful data point I have about how I actually work, and it took building seven products to see it clearly.",
+      },
+      { type: "heading", text: "Shipping was never the hard part" },
+      {
+        type: "paragraph",
+        text: "With Claude Code doing the engineering, going from idea to a working product is fast. Spec it, build it, deploy it, move to the next one. ScholarPilot, PropMate AI, TubeCommand, PromptCraft, LeadMate AI, Lumora, FinMate AI — each one went from nothing to a live, working product in a matter of weeks, not months. If the test of a venture studio were \"can you build things,\" FrictionLab would look successful by any measure.",
+      },
+      {
+        type: "paragraph",
+        text: "But shipping was never the test. Getting someone to pay for what I shipped was, and I kept mistaking the first for the second.",
+      },
+      { type: "heading", text: "The bottleneck was never technical" },
+      {
+        type: "paragraph",
+        text: "Every time a product stalled, my instinct was to build something to fix it. Leads weren't converting, so I'd build a better dashboard. Outreach felt scattered, so I'd build a system to organize it. At one point I had a project literally named Revenue OS, meant to function as an automated CMO and CRO for the whole portfolio. I treated it like real infrastructure I was waiting on.",
+      },
+      {
+        type: "paragraph",
+        text: "It was a folder. Nothing was built. It had no data, because none of the products had customers yet, and a system that analyzes conversion has nothing to analyze without a single real conversion to look at. I was planning to optimize marketing for a business that didn't have a first sale.",
+      },
+      {
+        type: "paragraph",
+        text: "That's the pattern, stated plainly: building feels like progress because it produces something visible, and it never requires anyone to say no to you. Outreach does. A cold email might get ignored. A warm lead might go quiet. Building another tool sidesteps that risk entirely, which is exactly why it's so easy to keep doing.",
+      },
+      { type: "heading", text: "What actually needed to happen instead" },
+      {
+        type: "paragraph",
+        text: "The honest fix was never a new system. It was contacting the four people who had already shown real interest and asking them to pay. That's it. No dashboard required. I did eventually send that outreach — but only after building eight more things I told myself were prerequisites first.",
+      },
+      {
+        type: "paragraph",
+        text: "Some of the delay was real, not just avoidance. Getting Stripe fully live has depended on paperwork through Rocket Wave that's genuinely outside my control on any given day. But real blockers and self-imposed ones were tangled together for a long time, and it took a lot of getting called out — by the pattern repeating itself, more than once — before I could tell them apart.",
+      },
+      { type: "heading", text: "Where this actually leaves things" },
+      {
+        type: "paragraph",
+        text: "Seven products at the start of this reflection. Nine now, counting SOPscribe and FricSor. Zero paying customers through all of it. The count of things built kept climbing while the number that actually matters stayed flat, and for a long stretch I didn't notice those were two different numbers.",
+      },
+      {
+        type: "paragraph",
+        text: "The lesson isn't \"stop building.\" Claude Code makes building cheap enough that it was never really the constraint. The lesson is that a studio's job isn't to keep producing more surface area — it's to take the risk on one idea all the way through to someone paying for it. I've gotten very good at the first half. The second half is the actual job, and it's the one I'm doing now: fewer new builds, more direct conversations with the people who already said they'd pay.",
+      },
+    ],
+  },
+  {
     slug: "ai-venture-studio-vs-accelerator-vs-agency",
     title: "AI Venture Studio vs Accelerator vs Agency: What's Actually Different",
     excerpt:

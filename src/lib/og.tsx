@@ -30,6 +30,10 @@ type OgImageOptions = {
   accent?: Accent;
   // Optional pill in the footer (e.g. a status + price).
   badge?: string;
+  // Optional headline font size. Short page and product names fit at the
+  // default 84px; longer headlines (blog post titles) pass a smaller size so
+  // the text still fits inside the 1200x630 card.
+  titleSize?: number;
 };
 
 // Builds the ImageResponse for a single page's social share card.
@@ -39,6 +43,7 @@ export function renderOgImage({
   subtitle,
   accent = "gold",
   badge,
+  titleSize = 84,
 }: OgImageOptions) {
   const colors = ACCENT_COLORS[accent];
 
@@ -72,7 +77,7 @@ export function renderOgImage({
           <div
             style={{
               marginTop: 24,
-              fontSize: 84,
+              fontSize: titleSize,
               fontWeight: 700,
               lineHeight: 1.05,
               color: "#eef2fb",
