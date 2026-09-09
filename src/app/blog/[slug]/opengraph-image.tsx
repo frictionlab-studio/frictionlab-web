@@ -21,7 +21,10 @@ export function generateStaticParams() {
 // long words ("Building a Company on a Wyoming LLC From Outside the US") wraps
 // to three lines at 68px and collides with the footer, while 52 characters
 // still fits on two. Verify the rendered PNG when adding a longer title.
+// Past ~75 characters the headline needs a third line, which at 58px leaves no
+// gap above the footer, so those step down again.
 function titleSizeFor(title: string): number {
+  if (title.length > 75) return 50;
   if (title.length > 52) return 58;
   if (title.length > 38) return 68;
   return 84;

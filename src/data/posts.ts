@@ -31,6 +31,55 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "what-international-students-actually-need-from-an-ai-tool",
+    title:
+      "What International Students Actually Need From an AI Tool (Not What Founders Assume)",
+    excerpt:
+      "The founder instinct is a slicker application tracker. The actual fear looks different. What building ScholarPilot revealed about the gap between assumption and signal.",
+    metaDescription:
+      "Building ScholarPilot surfaced a gap between what founders assume international students need and what the real signal actually pointed to.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    content: [
+      {
+        type: "paragraph",
+        text: "Building ScholarPilot for a while surfaces a specific pattern: what I assumed international students needed and what the actual early signal pointed to were not the same thing. None of this is proven — ScholarPilot has zero paying customers, same as everything else in the portfolio — but the gap between assumption and signal was consistent enough to be worth writing down.",
+      },
+      {
+        type: "heading",
+        text: "The assumption: a slicker application tracker",
+      },
+      {
+        type: "paragraph",
+        text: "The obvious founder instinct is \"make the process feel less chaotic\" — a clean dashboard, deadline reminders, a visual sense of progress. That's a UI problem, and UI problems are satisfying to solve because they're visible and easy to demo.",
+      },
+      { type: "heading", text: "What the actual fear looks like" },
+      {
+        type: "paragraph",
+        text: "The thing that seems to actually keep a student up at night isn't disorganization. It's a specific, concrete failure: submitting the wrong document, or a document with a small formatting error, and having an application rejected on a technicality that has nothing to do with whether they're qualified. That's not a UI problem. It's a correctness problem, and no amount of visual polish addresses it. A document-rejection prevention feature matters more to that fear than a nicer dashboard does, even though the dashboard is what a founder instinctively wants to build first.",
+      },
+      { type: "heading", text: "The assumption: the student is the buyer" },
+      {
+        type: "paragraph",
+        text: "Individual students researching and applying directly, one at a time, paying for their own account — that's the default mental model. It's wrong often enough to matter. A real slice of this market goes through coaching centers and consultants who handle the application process on behalf of many students at once, and who are the ones actually making a purchasing decision. That's the entire reason a coaching-center-priced tier exists in ScholarPilot's pricing, separate from the individual plans — because the buyer, in a meaningful share of cases, isn't the student navigating the tool. It's the institution paying for many of them to use it.",
+      },
+      {
+        type: "heading",
+        text: "The assumption: this is a regional product",
+      },
+      {
+        type: "paragraph",
+        text: "Building from Bangladesh, the easy default is to build for students like the ones nearby. ScholarPilot deliberately doesn't target Bangladesh specifically — the underlying fear (getting something technically wrong on a document that matters enormously) doesn't belong to one country. It's a function of the process being unforgiving and the stakes being high, which is true wherever the student is applying from.",
+      },
+      { type: "heading", text: "The honest caveat" },
+      {
+        type: "paragraph",
+        text: "This is informed by early signal, not proof. A handful of signups and a few real conversations shaped these assumptions-versus-reality contrasts, not a large sample or any paying customer confirming them at scale. The pattern worth taking from this isn't \"these three specific insights are correct.\" It's that the gap between what a founder assumes a user needs and what the user is actually afraid of is often wide, and the only way to find that gap is by getting close enough to real users to hear what they're actually worried about, rather than designing from your own guess at their experience.",
+      },
+    ],
+  },
+  {
     slug: "why-most-ai-saas-products-fail-before-they-ship",
     title: "Why Most AI SaaS Products Fail Before They Ship",
     excerpt:
