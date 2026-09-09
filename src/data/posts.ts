@@ -33,6 +33,62 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "ai-agents-vs-automation-whats-actually-different",
+    title: "AI Agents vs Automation: What's Actually Different",
+    excerpt:
+      "One task in the portfolio runs the same steps every day without variation. Another reasons through a different path each time. Here's the real difference between automation and an agent, and how to tell which one a task actually needs.",
+    metaDescription:
+      "A cron job and a code agent both run inside FrictionLab. Here's the actual, testable difference between them, and why most \"AI agent\" branding gets it wrong.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "FrictionLab runs both an \"agent\" and an \"automation,\" and for a while I used those words interchangeably. They aren't. Having built one of each, the difference isn't philosophical — it's a specific, testable question, and knowing which one you actually need is a real skill, not just AI vocabulary.",
+      },
+      { type: "heading", text: "The test that actually matters" },
+      {
+        type: "paragraph",
+        text: "Can you write down the exact steps in advance, in order, with no branching that depends on judgment? If yes, that's automation. If the right next step depends on reasoning about what you're currently looking at, and would change depending on the situation, that's an agent. Nothing about model size, cost, or how impressive the output looks decides which category something belongs to. Only that one question does.",
+      },
+      {
+        type: "heading",
+        text: "What automation looks like in the portfolio",
+      },
+      {
+        type: "paragraph",
+        text: "The FrictionLab Agentic OS runs a cron job at 06:00 UTC every day. Same trigger, same sequence, same steps every single time, logged to a PostgreSQL audit trail so I can verify it did exactly what it always does. Nothing about that task requires judgment. It requires reliability. Calling it \"agentic\" in the name was a branding choice, not a technical one — underneath, it's automation, and that's exactly what it should be. Automation is cheap to trust because it's fully predictable. You don't review it the way you'd review a judgment call, because there isn't one being made.",
+      },
+      { type: "heading", text: "What an actual agent looks like" },
+      {
+        type: "paragraph",
+        text: "FricSor, the code agent I built, is different. Given a failing test, it decides what to inspect, forms a hypothesis about the cause, checks that hypothesis against the actual code, and revises if it's wrong — genuinely different steps depending on what it finds, not a fixed script running the same sequence regardless of the situation. That's what makes it an agent rather than automation: the path isn't predetermined, it's reasoned out in the moment.",
+      },
+      {
+        type: "paragraph",
+        text: "That also makes it the one that requires real oversight. A predictable pipeline earns trust by doing the same thing every time. A reasoning process earns trust by being checked, because the same input can lead to a different path depending on what it decides to look at first.",
+      },
+      {
+        type: "heading",
+        text: "Where most of the AI agent hype gets this wrong",
+      },
+      {
+        type: "paragraph",
+        text: "A lot of what gets marketed as an \"AI agent\" is a fixed pipeline with a language model bolted onto one step, and a lot of what actually needs judgment gets built as a rigid script that breaks the moment reality doesn't match the assumption baked into it. Both are the wrong tool for the job, just in opposite directions. The expensive, harder-to-trust option isn't automatically better because it's newer. If the steps are known and stable, automation is faster, cheaper, and more reliable than making a model reason through something that never actually varies.",
+      },
+      {
+        type: "heading",
+        text: "The actual question to ask before building either one",
+      },
+      {
+        type: "paragraph",
+        text: "Not \"should this be automated or should this be an agent,\" framed as if one is the modern choice. The real question is whether the task in front of you has a fixed shape or a variable one. A daily report has a fixed shape — automate it. Diagnosing why a test is failing has a variable shape — that needs judgment. Getting that categorization wrong either way costs you: over-engineering a fixed task with reasoning it doesn't need, or under-engineering a variable one with a script that can't adapt to what it actually finds.",
+      },
+    ],
+  },
+  {
     slug: "how-to-validate-a-saas-idea-before-writing-a-line-of-code",
     title: "How to Validate a SaaS Idea Before Writing a Line of Code",
     excerpt:
