@@ -33,6 +33,55 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "why-most-ai-saas-products-fail-before-they-ship",
+    title: "Why Most AI SaaS Products Fail Before They Ship",
+    excerpt:
+      "Operator never shipped. It's parked. Here's the honest reason why, and what it revealed about why most AI SaaS products fail before they ever reach a live URL.",
+    metaDescription:
+      "One product in the portfolio never made it past an idea worth pursuing. The honest, unglamorous reasons most AI SaaS products fail before they ever ship.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "Of everything under FrictionLab, one product never made it past being an idea worth pursuing: Operator. It's parked. Not shipped, not one of the products in the portfolio, not a lesson wrapped in a happy ending. Most AI SaaS products fail earlier than people admit — before there's ever a live URL to point at — and the actual reasons are more mundane than \"the market wasn't ready.\"",
+      },
+      { type: "heading", text: "AI made it too easy to start" },
+      {
+        type: "paragraph",
+        text: "With Claude Code, starting a build costs almost nothing, so the bar for \"is this worth pursuing\" quietly drops. Anything technically interesting gets a first pass, because a first pass is cheap. That's backwards. Cheap to start should raise the bar for what's worth starting, not lower it — because cheap to start also means cheap to abandon, and that's exactly what happens to most of these ideas.",
+      },
+      { type: "heading", text: "Nobody was identified as the buyer" },
+      {
+        type: "paragraph",
+        text: "Operator was interesting to build. I don't have a clean answer for who specifically needed it badly enough to pay for it, and that's the actual reason it's parked, not any technical failure. A product that's technically solid and has no one waiting for it isn't behind schedule. It's aimed at nobody, and no amount of additional building fixes that.",
+      },
+      { type: "heading", text: "\"AI-powered\" is not a pitch" },
+      {
+        type: "paragraph",
+        text: "If a product's pitch leads with the fact that it uses AI, that's usually a sign the actual outcome for a specific buyer was never nailed down first. Nobody wakes up wanting an AI tool. They wake up wanting a problem solved, and if AI happens to be the best way to solve it, that fact should be invisible in the pitch, not the headline.",
+      },
+      {
+        type: "heading",
+        text: "Scope grows because adding things got cheap",
+      },
+      {
+        type: "paragraph",
+        text: "Before tools like this existed, every additional feature had a real cost that forced the question of whether it actually mattered. Now the cost of \"just add this too\" is low enough that scope quietly grows past what the original idea needed. Something that should have shipped in two weeks takes six, because it kept expanding before anyone outside my own head ever saw it.",
+      },
+      {
+        type: "heading",
+        text: "What would have actually caught this earlier",
+      },
+      {
+        type: "paragraph",
+        text: "Not more technical validation — the discipline is the same one the earlier posts in this series already pointed at, just applied sooner. Name the specific buyer before writing any code. If that name doesn't come easily, that's the signal to stop, not a gap to research your way past. Operator taught me that late enough that it cost real weeks. Everything since is the discipline applied before the build starts, not after it's already underway.",
+      },
+    ],
+  },
+  {
     slug: "building-a-company-on-a-wyoming-llc-from-outside-the-us",
     title: "Building a Company on a Wyoming LLC From Outside the US",
     excerpt:
