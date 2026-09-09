@@ -25,8 +25,6 @@ export type BlogPost = {
   author: string;
   // ISO date string (YYYY-MM-DD) for sorting/display.
   date: string;
-  // Estimated read time in minutes.
-  readingMinutes: number;
   // Full article body, rendered block by block on the post page.
   content: ContentBlock[];
 };
@@ -42,7 +40,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-09-09",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -91,7 +88,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-09-09",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -143,10 +139,9 @@ export const posts: BlogPost[] = [
       "One task in the portfolio runs the same steps every day without variation. Another reasons through a different path each time. Here's the real difference between automation and an agent, and how to tell which one a task actually needs.",
     metaDescription:
       "A cron job and a code agent both run inside FrictionLab. Here's the actual, testable difference between them, and why most \"AI agent\" branding gets it wrong.",
-    categorySlug: "startup-building",
+    categorySlug: "ai-agents",
     author: "Talukder Abir Hasan",
     date: "2026-09-09",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -202,7 +197,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-09-09",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -265,7 +259,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-09-09",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -326,7 +319,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-09-09",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -381,7 +373,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-09-09",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -439,7 +430,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-08-03",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -492,7 +482,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2026-07-29",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -540,7 +529,6 @@ export const posts: BlogPost[] = [
     categorySlug: "startup-building",
     author: "Talukder Abir Hasan",
     date: "2025-12-10",
-    readingMinutes: 6,
     content: [
       {
         type: "paragraph",
@@ -592,7 +580,6 @@ export const posts: BlogPost[] = [
     categorySlug: "ai-agents",
     author: "Talukder Abir Hasan",
     date: "2025-11-28",
-    readingMinutes: 8,
     content: [
       {
         type: "paragraph",
@@ -623,7 +610,6 @@ export const posts: BlogPost[] = [
     categorySlug: "prompt-engineering",
     author: "Talukder Abir Hasan",
     date: "2025-11-14",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -649,7 +635,6 @@ export const posts: BlogPost[] = [
     categorySlug: "automation",
     author: "Talukder Abir Hasan",
     date: "2025-10-30",
-    readingMinutes: 6,
     content: [
       {
         type: "paragraph",
@@ -675,7 +660,6 @@ export const posts: BlogPost[] = [
     categorySlug: "saas",
     author: "Talukder Abir Hasan",
     date: "2025-10-12",
-    readingMinutes: 7,
     content: [
       {
         type: "paragraph",
@@ -701,7 +685,6 @@ export const posts: BlogPost[] = [
     categorySlug: "education-technology",
     author: "Talukder Abir Hasan",
     date: "2025-09-26",
-    readingMinutes: 5,
     content: [
       {
         type: "paragraph",
@@ -720,6 +703,30 @@ export const posts: BlogPost[] = [
     ],
   },
 ];
+
+// Words per minute used to estimate reading time. 200 wpm is the common
+// average for adult reading of general prose.
+const WORDS_PER_MINUTE = 200;
+
+// Estimated reading time in minutes, computed from the post body rather than
+// stored, so it can never drift from the actual content. Counts words in
+// paragraph and list-item text; headings are skipped because they are scanned
+// rather than read. Rounds to the nearest minute with a one-minute floor, so a
+// very short post never renders "0 min read".
+export function readingMinutes(post: BlogPost): number {
+  const words = post.content.reduce((total, block) => {
+    if (block.type === "heading") return total;
+    const text = block.type === "list" ? block.items.join(" ") : block.text;
+    // Only tokens containing a letter or digit count, so standalone
+    // punctuation (an em dash between spaces) is not counted as a word.
+    const tokens = text
+      .split(/\s+/)
+      .filter((token) => /[\p{L}\p{N}]/u.test(token));
+    return total + tokens.length;
+  }, 0);
+
+  return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
+}
 
 // Returns the most recent posts, newest first.
 export function getRecentPosts(limit = 3): BlogPost[] {

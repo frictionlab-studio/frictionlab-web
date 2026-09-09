@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { getRecentPosts } from "@/data/posts";
+import { getRecentPosts, readingMinutes } from "@/data/posts";
 import { getCategoryBySlug } from "@/data/blog-categories";
 
 // Formats an ISO date into a short, human-readable label.
@@ -55,7 +55,7 @@ export function BlogPreview() {
               <div className="mt-6 flex items-center gap-2 text-xs text-faint">
                 <span>{formatDate(post.date)}</span>
                 <span aria-hidden>·</span>
-                <span>{post.readingMinutes} min read</span>
+                <span>{readingMinutes(post)} min read</span>
               </div>
             </GlassCard>
           );

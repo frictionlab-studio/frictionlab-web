@@ -1,7 +1,7 @@
 // Per-post social card. One image is generated for every post slug (Next.js
 // reuses the page segment's generateStaticParams), so each article shares a
 // card branded in its category's accent color.
-import { getPostBySlug, postSlugs } from "@/data/posts";
+import { getPostBySlug, postSlugs, readingMinutes } from "@/data/posts";
 import { getCategoryBySlug } from "@/data/blog-categories";
 import { renderOgImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og";
 
@@ -65,6 +65,6 @@ export default async function Image({ params }: ImageProps) {
     // Same copy as the page's <meta> description (identical fallback).
     subtitle: truncate(post.metaDescription ?? post.excerpt, 180),
     accent: category?.accent ?? "purple",
-    badge: `${category?.name ?? "Article"} · ${post.readingMinutes} min read`,
+    badge: `${category?.name ?? "Article"} · ${readingMinutes(post)} min read`,
   });
 }

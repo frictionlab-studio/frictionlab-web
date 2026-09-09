@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
-import { posts } from "@/data/posts";
+import { posts, readingMinutes } from "@/data/posts";
 import { blogCategories, getCategoryBySlug } from "@/data/blog-categories";
 
 export const metadata: Metadata = {
@@ -83,7 +83,7 @@ export default function BlogPage() {
                   <div className="mt-6 flex items-center gap-2 text-xs text-faint">
                     <span>{formatDate(post.date)}</span>
                     <span aria-hidden>·</span>
-                    <span>{post.readingMinutes} min read</span>
+                    <span>{readingMinutes(post)} min read</span>
                   </div>
                 </GlassCard>
               </Link>

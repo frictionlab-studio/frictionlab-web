@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Aurora } from "@/components/visuals/Aurora";
-import { postSlugs, getPostBySlug } from "@/data/posts";
+import { postSlugs, getPostBySlug, readingMinutes } from "@/data/posts";
 import { getCategoryBySlug } from "@/data/blog-categories";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { blogPostingSchema } from "@/lib/jsonld";
@@ -96,7 +96,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <span aria-hidden>·</span>
             <span>{formatDate(post.date)}</span>
             <span aria-hidden>·</span>
-            <span>{post.readingMinutes} min read</span>
+            <span>{readingMinutes(post)} min read</span>
           </div>
         </Container>
       </section>
