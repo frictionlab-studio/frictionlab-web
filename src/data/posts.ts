@@ -33,6 +33,61 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "building-a-company-on-a-wyoming-llc-from-outside-the-us",
+    title: "Building a Company on a Wyoming LLC From Outside the US",
+    excerpt:
+      "An LLC filed from outside the US in days. Being ready to take a customer's payment through it — still not finished. The honest account of what this setup actually involves.",
+    metaDescription:
+      "Running a Wyoming LLC from Bangladesh, including the part still not finished. What's actually fast, what's actually slow, and where things stand right now.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "paragraph",
+        text: "FrictionLab is a Wyoming LLC, run entirely from Tangail, Bangladesh. I've never set foot in Wyoming, or the United States. Here's the honest account of what that setup actually involves, including the parts that still aren't finished.",
+      },
+      { type: "heading", text: "Why Wyoming, specifically" },
+      {
+        type: "paragraph",
+        text: "No state income tax, no residency or citizenship requirement to form one, and a formation process that doesn't need you to be physically present. That combination is why it's the default choice for founders operating from outside the US — not because it's automatically the best structure for every business, but because it's one of the few that doesn't assume you live there. I'm not a lawyer or an accountant, and this isn't advice on what structure is right for anyone else's situation. It's what worked for mine.",
+      },
+      { type: "heading", text: "The part that's actually fast" },
+      {
+        type: "paragraph",
+        text: "Filing the Articles of Organization through a formation service took days, not months. That's the part every guide to this talks about, and it's genuinely true — the paperwork that creates the legal entity is the easy part of this whole process.",
+      },
+      { type: "heading", text: "The part nobody mentions" },
+      {
+        type: "paragraph",
+        text: "Having an LLC and being able to use it for what you actually need — taking payments — are two different timelines. Getting an EIN, a real US mailing address for the entity, and documentation a payment processor will accept as proof of a registered business takes considerably longer, especially when it's handled through a formation service rather than in person.",
+      },
+      {
+        type: "paragraph",
+        text: "I found this out the hard way when I tried to activate Stripe. The dashboard showed a \"switch to live account\" option, which looked like approval. It wasn't. Trying to actually complete activation hit a locked country field and a requirement for business documentation the LLC formation hadn't produced yet — because the formation itself was still incomplete. Filing the entity and being ready to process a customer's payment are not the same milestone, and I'd assumed they were.",
+      },
+      { type: "heading", text: "Where this actually stands right now" },
+      {
+        type: "paragraph",
+        text: "Still blocked, as of writing this. The formation service hasn't yet delivered a usable US mailing address for the entity, and that one missing piece cascades into everything downstream of it: three policy documents still have a placeholder where that address needs to go, and Stripe's business registration can't complete without it. This isn't a story about a problem I solved. It's a story about a dependency that's been sitting there for weeks, entirely outside my control on any given day, while every other part of the business kept moving.",
+      },
+      {
+        type: "heading",
+        text: "What I'd actually tell someone else doing this from outside the US",
+      },
+      {
+        type: "list",
+        items: [
+          "Assume the paperwork that creates the entity is the fast part, and the paperwork that makes the entity usable is the slow part.",
+          "Don't build your launch timeline around \"LLC formed\" as the milestone that unblocks payments — it doesn't.",
+          "Ask the formation service directly, before you pay them, exactly how long the mailing address and EIN take separately from the entity filing itself, because those are the two things that will actually determine when you can take a first payment.",
+          "And build everything else — the product, the pricing, the outreach — in parallel with this, not after it, because waiting on paperwork you don't control is not a good reason to stop building the parts you do.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "ai-agents-vs-automation-whats-actually-different",
     title: "AI Agents vs Automation: What's Actually Different",
     excerpt:

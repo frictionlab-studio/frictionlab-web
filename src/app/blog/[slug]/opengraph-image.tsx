@@ -17,8 +17,12 @@ export function generateStaticParams() {
 
 // Article titles run much longer than product names, so the headline is
 // stepped down for longer titles to keep it inside the 1200x630 card.
+// The 52-character boundary is empirical: a title of ~55 characters made of
+// long words ("Building a Company on a Wyoming LLC From Outside the US") wraps
+// to three lines at 68px and collides with the footer, while 52 characters
+// still fits on two. Verify the rendered PNG when adding a longer title.
 function titleSizeFor(title: string): number {
-  if (title.length > 55) return 58;
+  if (title.length > 52) return 58;
   if (title.length > 38) return 68;
   return 84;
 }
