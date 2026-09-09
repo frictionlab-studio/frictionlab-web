@@ -31,6 +31,54 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "difference-between-building-fast-and-building-right",
+    title: "The Difference Between Building Fast and Building Right",
+    excerpt:
+      "Fast and right aren't opposites. A real bug that shipped silently, and a feature deliberately left unbuilt until it was needed, show what actually decides which one a piece of the system needs.",
+    metaDescription:
+      "An OG image bug sat quietly for weeks before anyone caught it. What that revealed about when fast is the right call, and when it quietly starts costing you.",
+    categorySlug: "startup-building",
+    author: "Talukder Abir Hasan",
+    date: "2026-09-09",
+    content: [
+      {
+        type: "paragraph",
+        text: "A few posts back, an OG image bug shipped quietly: any title between 53 and 55 characters would have rendered with a broken third line, and nobody would have known until it happened. It got caught because someone checked the actual rendered image instead of trusting the math. That's this whole post in one example — fast and right aren't opposites, and the mistake is treating them like they are.",
+      },
+      { type: "heading", text: "What \"fast\" actually bought" },
+      {
+        type: "paragraph",
+        text: "Every product in this portfolio exists because building fast was possible. A dashboard for reading time that's just a hardcoded number is fast. A category system where the chips look real but don't link anywhere yet is fast. Neither of those was wrong to do at the time — they let something ship today instead of next week, and next week is when it would have mattered whether the number or the link was real.",
+      },
+      { type: "heading", text: "What \"fast\" quietly costs" },
+      {
+        type: "paragraph",
+        text: "The hardcoded reading time sat on every post for weeks, silently wrong, because nothing forced anyone to look at it closely until there were enough short posts next to long ones that the number stopped making sense. The category chips still don't link anywhere. Fast doesn't fail loudly. It fails by sitting there being slightly wrong until something else exposes it — a new post, a longer title, a reader who actually clicks the thing that looks clickable.",
+      },
+      {
+        type: "heading",
+        text: "What actually decides which one a piece of the system needs",
+      },
+      {
+        type: "paragraph",
+        text: "Not \"is this important\" in the abstract. The real question is whether getting it wrong costs something now or costs something later. The OG image bug cost nothing until a title crossed a specific length — that's a fine thing to leave fast and fix when it actually breaks. The reading time being wrong cost trust every single time someone saw \"5 min\" on a 90-word post — that's not something to leave fast, because the cost was already being paid, quietly, every time.",
+      },
+      {
+        type: "heading",
+        text: "Building right doesn't mean building it all now",
+      },
+      {
+        type: "paragraph",
+        text: "Right doesn't mean anticipating every future problem before shipping. The list-block feature on this site didn't get built until there was an actual paragraph that needed to be a list. Building it earlier, before anything needed it, would have been guessing at a shape nothing had asked for yet. That's not building right. That's just building slow, and calling it careful.",
+      },
+      { type: "heading", text: "The actual discipline" },
+      {
+        type: "paragraph",
+        text: "Ship the fast version on purpose, not by accident. Know which shortcuts you're taking and why they're fine for now. And build in a way that makes checking easy later — a verification step, a fresh read against production instead of trusting the local build, a moment where someone actually looks at the rendered image instead of the code that's supposed to produce it. The OG bug and the reading-time fix didn't get caught by building everything right the first time. They got caught by checking, on a plain schedule, whether the fast version had started costing something. That's the actual skill. Not choosing fast or right up front — building in a way that tells you when it's time to switch.",
+      },
+    ],
+  },
+  {
     slug: "what-international-students-actually-need-from-an-ai-tool",
     title:
       "What International Students Actually Need From an AI Tool (Not What Founders Assume)",
